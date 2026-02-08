@@ -33,7 +33,7 @@ Sin un mediador:
 
 ##  Solución Implementada
 
-Se introduce una **Sala de Chat (`ChatRoom`)** como mediador central que:
+Se introduce una **Sala de Chat (`MediatorChatGrupal`)** como mediador central que:
 
 - Recibe mensajes de los usuarios.
 - Distribuye los mensajes a los destinatarios correspondientes.
@@ -56,7 +56,7 @@ Los usuarios solo se comunican con la sala de chat, **no entre sí directamente*
 
 ---
 
-## ▶️ Cómo ejecutar
+## Cómo ejecutar
 
 ```bash
 yarn install
