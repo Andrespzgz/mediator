@@ -1,10 +1,10 @@
 import { Emisor } from "./Emisor";
-import { Mediador } from "./Mediador";
+import { IMediador } from "./IMediador";
 
 export class Usuario extends Emisor {
   private nombre: string;
 
-  constructor(nombre: string, mediador: Mediador<Emisor>) {
+  constructor(nombre: string, mediador: IMediador<Emisor>) {
     super(mediador);
     this.nombre = nombre;
   }
