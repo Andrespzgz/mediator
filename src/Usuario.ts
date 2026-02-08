@@ -1,7 +1,8 @@
 import { Emisor } from "./Emisor";
 import { IMediador } from "./IMediador";
+import { IReceptor } from "./IReceptor";
 
-export class Usuario extends Emisor {
+export class Usuario extends Emisor implements IReceptor{
   private nombre: string;
 
   constructor(nombre: string, mediador: IMediador<Emisor>) {

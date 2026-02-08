@@ -77,22 +77,35 @@ El sistema sigue el **Patrón Mediator**, donde:
 
 ```mermaid
 classDiagram
+
     class IMediador {
         <<interface>>
         + notificar(emisor, evento): void
     }
-    class Emisor {
-        + enviar(evento): void
-    }
-    class Usuario {
+
+    class IReceptor {
+        <<interface>>
         + recibir(mensaje): void
     }
+
+    class Emisor {
+        # mediador: IMediador
+        + enviar(evento): void
+    }
+
+    class Usuario {
+        - nombre: string
+        + getNombre(): string
+        + recibir(mensaje): void
+    }
+
     class MediadorChatGrupal {
-        + agregarEmisor(emisor): void
-        + notificar(emisor, evento): void
+        - emisores: (Emisor & IReceptor)[]
+        + agregarEmisor(emisor)
+        + notificar(emisor, evento)
     }
 
     IMediador <|.. MediadorChatGrupal
+    IReceptor <|.. Usuario
     Emisor <|-- Usuario
     Emisor --> IMediador
-
