@@ -1,7 +1,7 @@
 import { Emisor } from "./Emisor";
-import { Mediador } from "./Mediador";
+import { IMediador } from "./IMediador";
 
-export class MediadorChatGrupal implements Mediador<Emisor> {
+export class MediadorChatGrupal implements IMediador<Emisor> {
   private emisores: Emisor[] = [];
 
   constructor(emisores: Emisor[]) {

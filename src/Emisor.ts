@@ -1,9 +1,9 @@
-import { Mediador } from "./Mediador";
+import { IMediador } from "./IMediador";
 
 export class Emisor {
-  protected mediador: Mediador<Emisor>;
+  protected mediador: IMediador<Emisor>;
 
-  constructor(mediador: Mediador<Emisor>) {
+  constructor(mediador: IMediador<Emisor>) {
     this.mediador = mediador;
   }
 
